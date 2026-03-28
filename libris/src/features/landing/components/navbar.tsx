@@ -32,7 +32,7 @@ export const Navbar = () => {
             </Button>
           </Link>
           <Link to='/register'>
-            <Button size='sm' className='gap-1.5'>
+            <Button size='sm' className='gap-1.5 rounded-xl'>
               {t('navbar.start')} <ArrowRight className='w-3.5 h-3.5' />
             </Button>
           </Link>
