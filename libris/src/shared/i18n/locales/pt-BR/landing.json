@@ -1,0 +1,67 @@
+{
+  "navbar": {
+    "name": "Libris",
+    "login": "Entrar",
+    "start": "Começar"
+  },
+  "hero": {
+    "badge": "Fornecido pela API do Google Books",
+    "title": ["Sua biblioteca", "pessoal", ", online"],
+    "subtitle": "Descubra livros no acervo do Google, organize sua leitura com status personalizados e mantenha sua estante sempre à mão.",
+    "buttons": {
+      "createMyBookshelf": "Criar minha estante",
+      "alreadyHaveAccount": "Já tenho conta"
+    }
+  },
+  "features": {
+    "title": "Tudo que você precisa",
+    "subtitle": " Uma experiência completa de gerenciamento de leitura, diretamente no seu navegador.",
+    "items": {
+      "search": {
+        "title": "Descubra Milhões de Livros",
+        "description": "Busca poderosa com debounce conectada à API do Google Books. Filtre por tipo e ordenação."
+      },
+      "library": {
+        "title": "Sua Estante Virtual",
+        "description": "Salve livros com status personalizados: Quero Ler, Lendo ou Concluído. Dados persistidos localmente."
+      },
+      "bookMarked": {
+        "title": "Detalhes Completos",
+        "description": "Sinopse, editora, ISBN, categorias e link direto para preview no Google Books."
+      },
+      "sparkles": {
+        "title": "Experiência Moderna",
+        "description": "Tema dark/light, internacionalização PT/EN, animações suaves e design responsivo."
+      }
+    }
+  },
+  "shelfPreview": {
+    "title": "Sua estante organizada",
+    "subtitle": "Visualize todos os seus livros numa tabela elegante, altere status e remova com um clique.",
+    "table": {
+      "cover": "Capa",
+      "title": "Título",
+      "author": "Autor",
+      "published": "Publicação",
+      "status": "Status"
+    }
+  },
+  "cta": {
+    "title": "Comece a ler com mais organização",
+    "subtitle": "Crie sua estante virtual agora mesmo. Sem cadastro complicado, sem dados no servidor — tudo fica no seu navegador.",
+    "joinNow": "Entrar agora"
+  },
+  "stats": {
+    "items": {
+      "availableBooks": "Livros disponíveis",
+      "free": "Gratuito",
+      "status": "Status de leitura",
+      "language": "Idiomas"
+    }
+  },
+  "footer": {
+    "name": "Libris",
+    "data": "Dados fornecidos pela ",
+    "api": "Google Books API"
+  }
+}

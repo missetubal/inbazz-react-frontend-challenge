@@ -1,5 +1,10 @@
 {
   "loading": "Carregando...",
   "toggleTheme": "Alternar tema",
-  "toggleLanguage": "Switch to English"
+  "toggleLanguage": "Switch to English",
+  "badges": {
+    "wantToRead": "Quero ler",
+    "reading": "Lendo",
+    "finished": "Concluído"
+  }
 }

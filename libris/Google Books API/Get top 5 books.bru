@@ -1,0 +1,19 @@
+meta {
+  name: Get top 5 books
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://www.googleapis.com/books/v1/volumes?q=sucesso&maxResults=5&orderBy=relevance&langRestrict=pt&printType=books
+  body: none
+  auth: inherit
+}
+
+params:query {
+  q: sucesso
+  maxResults: 5
+  orderBy: relevance
+  langRestrict: pt
+  printType: books
+}
