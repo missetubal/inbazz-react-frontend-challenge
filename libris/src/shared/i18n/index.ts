@@ -6,6 +6,8 @@ import ptCommon from './locales/pt-BR/common.json';
 import enCommon from './locales/en-US/common.json';
 import enAuth from './locales/en-US/auth.json';
 import ptAuth from './locales/pt-BR/auth.json';
+import ptLanding from './locales/pt-BR/landing.json';
+import enLanding from './locales/en-US/landing.json';
 
 i18n
   .use(LanguageDetector)
@@ -14,8 +16,8 @@ i18n
     fallbackLng: 'pt-BR',
     supportedLngs: ['pt-BR', 'en-US'],
     resources: {
-      'pt-BR': { common: ptCommon, auth: ptAuth },
-      'en-US': { common: enCommon, auth: enAuth },
+      'pt-BR': { common: ptCommon, auth: ptAuth, landing: ptLanding },
+      'en-US': { common: enCommon, auth: enAuth, landing: enLanding },
     },
     defaultNS: 'common',
     interpolation: {
