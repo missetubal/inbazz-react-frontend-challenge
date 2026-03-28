@@ -1,6 +1,7 @@
 import type { GoogleBooksApiItem, GoogleBooksApiResponse } from './types';
 
 const GOOGLE_BOOKS_API_BASE_URL = 'https://www.googleapis.com/books/v1/volumes';
+const API_KEY = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY;
 
 interface SearchBookRequest {
   query: string;
@@ -25,6 +26,7 @@ export const searchBooks = async ({
     url.searchParams.set('langRestrict', langRestrict);
 
     if (printType) url.searchParams.set('printType', printType);
+    // if (API_KEY !== '') url.searchParams.set('key', API_KEY);
 
     const response = await fetch(url);
 
