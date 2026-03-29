@@ -1,11 +1,10 @@
+import { LanguageToggle, ThemeToggle } from '@/components/custom';
 import { Button } from '@/components/ui';
-import { useThemeStore } from '@/features/theme';
 import { Link } from '@tanstack/react-router';
-import { ArrowRight, BookOpen, Moon, Sun } from 'lucide-react';
+import { ArrowRight, BookOpen } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export const Navbar = () => {
-  const { theme, toggleTheme } = useThemeStore();
   const { t } = useTranslation('landing');
   return (
     <header className='fixed top-0 inset-x-0 z-50 border-b border-border/30 bg-background/70 backdrop-blur-xl'>
@@ -19,13 +18,8 @@ export const Navbar = () => {
           </span>
         </div>
         <div className='flex items-center gap-2'>
-          <Button variant='ghost' size='icon' onClick={toggleTheme}>
-            {theme === 'dark' ? (
-              <Sun className='w-4 h-4' />
-            ) : (
-              <Moon className='w-4 h-4' />
-            )}
-          </Button>
+          <LanguageToggle />
+          <ThemeToggle />
           <Link to='/login'>
             <Button variant='ghost' size='sm'>
               {t('navbar.login')}

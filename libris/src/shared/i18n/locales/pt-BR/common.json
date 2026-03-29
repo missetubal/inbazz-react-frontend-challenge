@@ -6,5 +6,17 @@
     "wantToRead": "Quero ler",
     "reading": "Lendo",
     "finished": "Concluído"
+  },
+  "language": {
+    "en-US": "Inglês",
+    "pt-BR": "Português"
+  },
+  "nav": {
+    "name": "Libris",
+    "home": "Início",
+    "shelf": "Estante",
+    "discover": "Descobrir",
+    "profile": "Perfil",
+    "logout": "Sair"
   }
 }
