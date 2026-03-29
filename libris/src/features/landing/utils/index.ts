@@ -3,7 +3,7 @@ import {
   type BookStatusKey,
   type GoogleBooksApiItem,
 } from '@/shared';
-import type { LandingPageBooks } from '../types';
+import type { Book } from '../../../shared/types';
 
 export const getRandomBookStatus = () => {
   const statusKeys: BookStatusKey[] = Object.keys(
@@ -15,15 +15,14 @@ export const getRandomBookStatus = () => {
   return BOOK_STATUS[randomKey];
 };
 
-const mapApiItemToLandingBook = (
-  item: GoogleBooksApiItem,
-): LandingPageBooks | null => {
+const mapApiItemToLandingBook = (item: GoogleBooksApiItem): Book | null => {
   if (!item.volumeInfo.title) return null;
   if (!item.volumeInfo.previewLink) return null;
 
   const randomStatus = getRandomBookStatus();
 
   return {
+    id: item.id,
     title: item.volumeInfo.title,
     cover: item.volumeInfo.imageLinks?.smallThumbnail,
     description: item.volumeInfo.description,
@@ -36,6 +35,6 @@ const mapApiItemToLandingBook = (
 
 export const mapApiItemsToLandingBooks = (
   books: GoogleBooksApiItem[],
-): LandingPageBooks[] => {
+): Book[] => {
   return books.map(mapApiItemToLandingBook).filter((b) => b !== null);
 };

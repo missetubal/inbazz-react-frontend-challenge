@@ -1,0 +1,9 @@
+{
+  "title": "Minha Estante",
+  "subtitle": "Acompanhe seus livros e organize sua leitura",
+  "emptyState": {
+    "title": "Sua estante está vazia",
+    "description": "Descubra livros e adicione à sua coleção.",
+    "goDiscover": "Descobrir Livros"
+  }
+}
