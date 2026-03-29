@@ -1,5 +1,22 @@
 {
-  "loading": "Carregando...",
-  "toggleTheme": "Alternar tema",
-  "toggleLanguage": "Switch to English"
+  "loading": "Loading...",
+  "toggleTheme": "Toggle theme",
+  "toggleLanguage": "Switch language",
+  "badges": {
+    "wantToRead": "Want to read",
+    "reading": "Reading",
+    "finished": "Finished"
+  },
+  "language": {
+    "en-US": "English",
+    "pt-BR": "Portuguese"
+  },
+  "nav": {
+    "name": "Libris",
+    "home": "Home",
+    "shelf": "Shelf",
+    "discover": "Discover",
+    "profile": "Profile",
+    "logout": "Logout"
+  }
 }

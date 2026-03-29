@@ -1,4 +1,4 @@
-import { useThemeStore } from '@/features/theme/model';
+import { useThemeStore } from '@/shared/store';
 import { useEffect, type ReactNode } from 'react';
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {

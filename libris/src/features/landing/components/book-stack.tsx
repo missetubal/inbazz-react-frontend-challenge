@@ -42,7 +42,7 @@ export const BookStack = () => {
             animate={{ opacity: 1, y: offsets[i] }}
             transition={{ duration: 0.7, delay: delays[i], ease: 'easeOut' }}
             style={{ height: heights[i], rotate: rotations[i] }}
-            className='relative rounded-xl overflow-hidden shadow-2xl flex-shrink-0 cursor-pointer group bg-secondary'
+            className='relative rounded-xl overflow-hidden shadow-2xl shrink-0 cursor-pointer group bg-secondary'
             whileHover={{ scale: 1.06, rotate: 0, zIndex: 10 }}
           >
             {book.cover ? (

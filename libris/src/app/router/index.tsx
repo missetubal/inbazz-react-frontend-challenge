@@ -1,5 +1,3 @@
-// src/app/router/router.tsx
-
 import {
   createRouter,
   createRootRoute,
@@ -9,13 +7,10 @@ import {
 } from '@tanstack/react-router';
 import { useAuthStore } from '@/features/auth/model/auth-store';
 import { LoginPage, LandingPage, RegisterPage, ShelfPage } from '@/pages';
+import { AppLayout } from '@/components/custom';
 
 function RootLayout() {
-  return (
-    <main className='p-4'>
-      <Outlet />
-    </main>
-  );
+  return <AppLayout />;
 }
 
 const rootRoute = createRootRoute({
