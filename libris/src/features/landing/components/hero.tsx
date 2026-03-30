@@ -1,6 +1,6 @@
-import { BookStatusBadge } from '@/components/custom';
+import { ReadingStatusBadge } from '@/components/custom';
 import { Badge, Button } from '@/components/ui';
-import { BOOK_STATUS } from '@/shared';
+import { ReadingStatus } from '@/shared';
 import { Link } from '@tanstack/react-router';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
@@ -82,11 +82,8 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className='flex gap-2 mt-8 justify-center lg:justify-start flex-wrap'
             >
-              {Object.values(BOOK_STATUS).map((badge) => (
-                <BookStatusBadge
-                  status={badge.id}
-                  className={badge.colorClass}
-                />
+              {Object.values(ReadingStatus).map((status) => (
+                <ReadingStatusBadge status={status} />
               ))}
             </motion.div>
           </div>

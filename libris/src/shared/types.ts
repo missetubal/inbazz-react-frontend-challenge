@@ -1,11 +1,13 @@
-import type { BookStatusKey } from '@/shared';
+import type { ReadingStatus } from './enums';
 
-export interface LandingPageBooks {
+export interface Book {
+  id: string;
   title: string;
   description?: string;
   cover?: string;
   color?: string;
-  status: BookStatusKey;
+  status: ReadingStatus;
   authors?: string;
   publishedDate?: string;
+  year?: string;
 }

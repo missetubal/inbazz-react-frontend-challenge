@@ -7,5 +7,7 @@ export * from './textarea';
 export * from './badge';
 export * from './table';
 export * from './skeleton';
+export * from './select';
+export * from './sonner';
 export * from './dropdown-menu';
 export * from './select';
