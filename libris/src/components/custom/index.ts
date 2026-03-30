@@ -4,3 +4,4 @@ export * from './book-status-badge';
 export * from './language-toggle';
 export * from './theme-toggle';
 export * from './app-layout';
+export * from './book-card';

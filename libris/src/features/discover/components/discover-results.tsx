@@ -3,6 +3,7 @@ import type { DiscoverResultsProps } from '../types';
 import { EmptyState } from './empty-state';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { BookCardSkeleton, BookCard } from '@/components/custom';
 
 export const DiscoverResults = ({
   isError,
@@ -21,15 +22,16 @@ export const DiscoverResults = ({
     <EmptyState text={`${t('discover.error')}: ${error?.message}`} />;
   }
 
-  //   if(isLoading){
-  //     <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4'>
-  //       {Array(PAGE_SIZE)
-  //         .fill(0)
-  //         .map((_, i) => (
-  //           <BookCardSkeleton key={i} />
-  //         ))}
-  //     </div>;
-  //   }
+
+  if (isLoading) {
+    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4'>
+      {Array(PAGE_SIZE)
+        .fill(0)
+        .map((_, i) => (
+          <BookCardSkeleton key={i} />
+        ))}
+    </div>;
+  }
 
   if (hasUserTyped && data && data.length === 0) {
     <EmptyState text={t('discover.noResults')} />;
@@ -39,7 +41,7 @@ export const DiscoverResults = ({
     <>
       <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4'>
         {data.map((book, i) => (
-          <p>{book.id}</p>
+          <BookCard book={book} index={i} />
         ))}
       </div>
 
