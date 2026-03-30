@@ -6,12 +6,14 @@ import {
   Outlet,
 } from '@tanstack/react-router';
 import { useAuthStore } from '@/features/auth/model/auth-store';
+
 import {
   LoginPage,
   LandingPage,
   RegisterPage,
   DiscoverPage,
   ShelfPage,
+  BookDetailsPage,
 } from '@/pages';
 import { AppLayout } from '@/components/custom';
 
@@ -76,10 +78,10 @@ const shelfRoute = createRoute({
   component: ShelfPage,
 });
 
-const bookDetailRoute = createRoute({
+export const bookDetailRoute = createRoute({
   getParentRoute: () => authenticatedRoute,
   path: '/book/$bookId',
-  // component: BookDetailPage,
+  component: BookDetailsPage,
 });
 
 const discoverRoute = createRoute({

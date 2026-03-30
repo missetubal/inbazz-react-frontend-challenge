@@ -16,12 +16,11 @@ export const DiscoverResults = ({
   totalPages,
   setPage,
 }: DiscoverResultsProps) => {
-  const { t } = useTranslation('discover');
+  const { t } = useTranslation('shelfAndDiscover');
 
   if (isError) {
     <EmptyState text={`${t('discover.error')}: ${error?.message}`} />;
   }
-
 
   if (isLoading) {
     <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4'>
@@ -55,11 +54,11 @@ export const DiscoverResults = ({
             className='gap-1'
           >
             <ChevronLeft className='w-4 h-4' />
-            {t('results.pages.prev')}
+            {t('discover.results.pages.prev')}
           </Button>
 
           <span className='text-sm text-muted-foreground'>
-            {t('results.pages.page', {
+            {t('discover.results.pages.page', {
               current: page + 1,
               totalPages,
             })}
@@ -74,7 +73,7 @@ export const DiscoverResults = ({
             onClick={() => setPage((p) => p + 1)}
             className='gap-1'
           >
-            {t('results.pages.next')}
+            {t('discover.results.pages.next')}
             <ChevronRight className='w-4 h-4' />
           </Button>
         </div>

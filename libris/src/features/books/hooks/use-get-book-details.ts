@@ -1,15 +1,10 @@
-import { mapApiItemToBook, type Books } from '@/lib/book-utils';
+import { useShelfStore } from '@/features/shelf/models';
+import { mapApiItemToBook } from '@/lib/book-utils';
 import { getBookDetailsById, type GoogleBookDetailsItem } from '@/shared';
 import { useQuery } from '@tanstack/react-query';
 import type { TFunction } from 'node_modules/i18next/typescript/t';
 import { useTranslation } from 'react-i18next';
-
-interface UseBookDetailProps {
-  bookId: string;
-  isOnShelf: (id: string) => boolean;
-  addBook: (book: Books) => void;
-  removeBook: (id: string) => void;
-}
+// import { toast } from 'sonner';
 
 export interface UseBookDetailResult {
   book: GoogleBookDetailsItem | undefined;
@@ -18,17 +13,16 @@ export interface UseBookDetailResult {
   error: Error | null;
   onShelf: boolean;
   handleToggleShelf: () => void;
-  t: TFunction; // Para a função de tradução
+  t: TFunction;
 }
 
 export const useGetBookDetail = ({
   bookId,
-  isOnShelf,
-  addBook,
-  removeBook,
-}: UseBookDetailProps): UseBookDetailResult => {
-  const { t } = useTranslation('common');
-
+}: {
+  bookId: string;
+}): UseBookDetailResult => {
+  const { t } = useTranslation('shelfAndDiscover');
+  const { addBook, removeBook, isOnShelf } = useShelfStore();
   const {
     data: book,
     isLoading,
@@ -47,7 +41,7 @@ export const useGetBookDetail = ({
     if (!book) return;
     if (onShelf) {
       removeBook(book.id);
-      //   toast({ title: t('detail.removed') });
+      // toast.success(t('detail.removed'));
     } else {
       const newBook = mapApiItemToBook(book);
 
@@ -57,7 +51,6 @@ export const useGetBookDetail = ({
       //   toast({ title: t('detail.added') });
     }
   };
-
   return {
     book,
     isLoading,

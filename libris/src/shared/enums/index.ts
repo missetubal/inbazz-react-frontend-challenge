@@ -1,3 +1,3 @@
-export * from './book-status';
+export * from './reading-status';
 export * from './language';
 export * from './nav-items';
