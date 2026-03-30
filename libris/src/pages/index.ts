@@ -1,3 +1,4 @@
 export * from './LoginPage';
 export * from './LandingPage';
-export * from './RegisterPage'
+export * from './RegisterPage';
+export * from './DiscoverPage';

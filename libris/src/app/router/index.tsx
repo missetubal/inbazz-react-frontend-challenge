@@ -6,7 +6,7 @@ import {
   Outlet,
 } from '@tanstack/react-router';
 import { useAuthStore } from '@/features/auth/model/auth-store';
-import { LoginPage, LandingPage, RegisterPage } from '@/pages';
+import { LoginPage, LandingPage, RegisterPage, DiscoverPage } from '@/pages';
 import { AppLayout } from '@/components/custom';
 
 function RootLayout() {
@@ -79,7 +79,7 @@ const bookDetailRoute = createRoute({
 const discoverRoute = createRoute({
   getParentRoute: () => authenticatedRoute,
   path: '/discover',
-  // component: DiscoverPage,
+  component: DiscoverPage,
 });
 
 const routeTree = rootRoute.addChildren([
