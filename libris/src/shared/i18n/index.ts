@@ -10,6 +10,8 @@ import ptLanding from './locales/pt-BR/landing.json';
 import enLanding from './locales/en-US/landing.json';
 import ptShelf from './locales/pt-BR/shelf.json';
 import enShelf from './locales/pt-BR/shelf.json';
+import ptDiscover from './locales/pt-BR/discover.json';
+import enDiscover from './/locales/en-US/discover.json';
 
 i18n
   .use(LanguageDetector)
@@ -23,12 +25,14 @@ i18n
         auth: ptAuth,
         landing: ptLanding,
         shelf: ptShelf,
+        discover: ptDiscover,
       },
       'en-US': {
         common: enCommon,
         auth: enAuth,
         landing: enLanding,
         shelf: enShelf,
+        discover: enDiscover,
       },
     },
     defaultNS: 'common',

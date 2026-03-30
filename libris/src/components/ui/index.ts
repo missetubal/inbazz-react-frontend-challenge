@@ -10,3 +10,4 @@ export * from './skeleton';
 export * from './select';
 export * from './sonner';
 export * from './dropdown-menu';
+export * from './select';

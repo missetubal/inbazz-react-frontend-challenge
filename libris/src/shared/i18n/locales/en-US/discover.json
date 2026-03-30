@@ -1,0 +1,24 @@
+{
+  "title": "Discover books, organize your reading",
+  "subtitle": "Explore the Google Books collection, save your favorites, and keep your virtual bookshelf always at hand.",
+  "filter": {
+    "searchPlaceholder": "Search by title, author, or ISBN",
+    "type": {
+      "all": "All",
+      "books": "Books",
+      "magazines": "Magazines"
+    },
+    "order": {
+      "relevance": "Relevance",
+      "newest": "Newest"
+    }
+  },
+  "results": {
+    "noResults": "No books found. Try adjusting your search.",
+    "pages": {
+      "page": "Page {{currentPage}} / {{totalPages}}",
+      "prev": "Previous",
+      "next": "Next"
+    }
+  }
+}
