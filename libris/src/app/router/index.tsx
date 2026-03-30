@@ -6,7 +6,13 @@ import {
   Outlet,
 } from '@tanstack/react-router';
 import { useAuthStore } from '@/features/auth/model/auth-store';
-import { LoginPage, LandingPage, RegisterPage, DiscoverPage } from '@/pages';
+import {
+  LoginPage,
+  LandingPage,
+  RegisterPage,
+  DiscoverPage,
+  ShelfPage,
+} from '@/pages';
 import { AppLayout } from '@/components/custom';
 
 function RootLayout() {
@@ -36,7 +42,7 @@ const registerRoute = createRoute({
   beforeLoad: () => {
     const isAuthenticated = useAuthStore.getState().isAuthenticated;
     if (isAuthenticated) {
-      throw redirect({ to: '/dashboard' });
+      throw redirect({ to: '/shelf' });
     }
   },
 });
@@ -67,7 +73,7 @@ const authenticatedRoute = createRoute({
 const shelfRoute = createRoute({
   getParentRoute: () => authenticatedRoute,
   path: '/shelf',
-  // component: ShelfPage,
+  component: ShelfPage,
 });
 
 const bookDetailRoute = createRoute({

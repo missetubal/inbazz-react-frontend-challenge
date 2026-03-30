@@ -1,11 +1,12 @@
 {
   "loading": "Carregando...",
   "toggleTheme": "Alternar tema",
-  "toggleLanguage": "Switch to English",
+  "toggleLanguage": "Alterar para Inglês",
   "badges": {
     "wantToRead": "Quero ler",
     "reading": "Lendo",
-    "finished": "Concluído"
+    "finished": "Concluído",
+    "unknown": "Desconhecido"
   },
   "language": {
     "en-US": "Inglês",

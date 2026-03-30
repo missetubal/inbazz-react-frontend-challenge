@@ -5,7 +5,8 @@
   "badges": {
     "wantToRead": "Want to read",
     "reading": "Reading",
-    "finished": "Finished"
+    "finished": "Finished",
+    "unknown": "Unknown"
   },
   "language": {
     "en-US": "English",
