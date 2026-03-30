@@ -1,0 +1,16 @@
+meta {
+  name: Request com API
+  type: http
+  seq: 4
+}
+
+get {
+  url: https://www.googleapis.com/books/v1/volumes?q=quilting&key=SUA_CHAVE_DA_API_AQUI
+  body: none
+  auth: inherit
+}
+
+params:query {
+  q: quilting
+  key: SUA_CHAVE_DA_API_AQUI
+}
