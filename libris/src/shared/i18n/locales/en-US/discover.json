@@ -1,24 +1,24 @@
 {
-  "title": "Descubra livros, organize sua leitura",
-  "subtitle": "Explore o acervo do Google Books, salve seus favoritos e mantenha sua estante virtual sempre à mão.",
+  "title": "Discover books, organize your reading",
+  "subtitle": "Explore the Google Books collection, save your favorites, and keep your virtual bookshelf always at hand.",
   "filter": {
-    "searchPlaceholder": "Pesquise por título, autor ou ISBN",
+    "searchPlaceholder": "Search by title, author, or ISBN",
     "type": {
-      "all": "Todos",
-      "books": "Livros",
-      "magazines": "Revistas"
+      "all": "All",
+      "books": "Books",
+      "magazines": "Magazines"
     },
     "order": {
-      "relevance": "Relevância",
-      "newest": "Mais recentes"
+      "relevance": "Relevance",
+      "newest": "Newest"
     }
   },
   "results": {
-    "noResults": "Nenhum livro encontrado. Tente ajustar sua pesquisa.",
+    "noResults": "No books found. Try adjusting your search.",
     "pages": {
-      "page": "Página {{current}} de {{total}}",
-      "prev": "Anterior",
-      "next": "Próximo"
+      "page": "Page {{currentPage}} / {{totalPages}}",
+      "prev": "Previous",
+      "next": "Next"
     }
   }
 }
