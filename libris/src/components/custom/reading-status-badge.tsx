@@ -15,7 +15,7 @@ export const ReadingStatusBadge = ({ status }: { status: ReadingStatus }) => {
   if (!status) {
     return (
       <Badge variant='secondary' className='bg-muted text-muted-foreground'>
-        {t('badges.unknownStatus')}
+        {t('badges.unknown')}
       </Badge>
     );
   }
