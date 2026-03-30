@@ -27,12 +27,14 @@ export const ShelfTable = () => {
       <Table>
         <TableHeader>
           <TableRow className='bg-secondary/30'>
-            <TableHead className='w-16'>{t('shelf.cover')}</TableHead>
-            <TableHead>{t('shelf.bookTitle')}</TableHead>
-            <TableHead>{t('shelf.author')}</TableHead>
-            <TableHead>{t('shelf.published')}</TableHead>
-            <TableHead>{t('shelf.status')}</TableHead>
-            <TableHead className='text-right'>{t('shelf.actions')}</TableHead>
+            <TableHead className='w-16'>{t('shelf.table.cover')}</TableHead>
+            <TableHead>{t('shelf.table.title')}</TableHead>
+            <TableHead>{t('shelf.table.authors')}</TableHead>
+            <TableHead>{t('shelf.table.publishedDate')}</TableHead>
+            <TableHead>{t('shelf.table.status')}</TableHead>
+            <TableHead className='text-right'>
+              {t('shelf.table.actions')}
+            </TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -86,13 +88,13 @@ export const ShelfTable = () => {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value='want_to_read'>
-                        {t('shelf.wantToRead')}
+                        {t('shelf.table.wantToRead')}
                       </SelectItem>
                       <SelectItem value='reading'>
-                        {t('shelf.reading')}
+                        {t('shelf.table.reading')}
                       </SelectItem>
                       <SelectItem value='completed'>
-                        {t('shelf.completed')}
+                        {t('shelf.table.completed')}
                       </SelectItem>
                     </SelectContent>
                   </Select>

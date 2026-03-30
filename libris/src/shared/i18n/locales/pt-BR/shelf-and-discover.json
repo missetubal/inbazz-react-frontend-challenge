@@ -13,7 +13,8 @@
       "authors": "Autores",
       "publishedDate": "Publicado em",
       "actions": "Ações",
-      "remove": "Remover"
+      "remove": "Remover",
+      "status": "Status"
     },
     "toast": {
       "added": "Livro adicionado à estante",

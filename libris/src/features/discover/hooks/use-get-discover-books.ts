@@ -28,12 +28,10 @@ export const useGetDiscoverBooks = (): UseGetDiscoverBooksResult => {
 
   const searchedBooks = debouncedQuery ? debouncedQuery : 'populares';
 
-  const {
-    data,
-    isFetching: isLoading,
-    isError,
-    error,
-  } = useQuery<GoogleBooksApiItem[], Error>({
+  const { data, isLoading, isError, error } = useQuery<
+    GoogleBooksApiItem[],
+    Error
+  >({
     queryKey: ['books', debouncedQuery, printType, orderBy, page],
     queryFn: () =>
       searchBooks({
