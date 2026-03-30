@@ -42,7 +42,7 @@ const registerRoute = createRoute({
   beforeLoad: () => {
     const isAuthenticated = useAuthStore.getState().isAuthenticated;
     if (isAuthenticated) {
-      throw redirect({ to: '/dashboard' });
+      throw redirect({ to: '/shelf' });
     }
   },
 });

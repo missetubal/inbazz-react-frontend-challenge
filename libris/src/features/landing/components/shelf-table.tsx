@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next';
 import { useGetShelfPreviewTable } from '../hooks';
 import { motion } from 'framer-motion';
 import { BookOpen } from 'lucide-react';
-import { BookStatusBadge } from '@/components/custom';
+import { ReadingStatusBadge } from '@/components/custom';
 
 export const ShelfTable = () => {
   const { t } = useTranslation('landing');
@@ -113,11 +113,11 @@ export const ShelfTable = () => {
                         {book.authors ?? '-'}
                       </TableCell>
                       <TableCell className='hidden sm:table-cell text-sm text-muted-foreground'>
-                        {book.publishedDate}
+                        {book.year}
                       </TableCell>
                       <TableCell className='text-right'>
                         {book.status && (
-                          <BookStatusBadge status={book.status} />
+                          <ReadingStatusBadge status={book.status} />
                         )}
                       </TableCell>
                     </TableRow>

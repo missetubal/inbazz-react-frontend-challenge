@@ -15,7 +15,7 @@ import { Link } from '@tanstack/react-router';
 import { AnimatePresence, motion } from 'framer-motion';
 import { BookOpen, Trash2 } from 'lucide-react';
 import { useGetShelfData } from '../hooks/use-shelf-data';
-import { BookStatusBadge } from '@/components/custom';
+import { ReadingStatusBadge } from '@/components/custom';
 import type { Book } from '@/shared';
 
 export const ShelfTable = () => {
@@ -82,10 +82,7 @@ export const ShelfTable = () => {
                     }
                   >
                     <SelectTrigger className='w-36 h-8 text-xs'>
-                      <BookStatusBadge
-                        status={book.status}
-                        className={book.color}
-                      />
+                      <ReadingStatusBadge status={book.status} />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value='want_to_read'>

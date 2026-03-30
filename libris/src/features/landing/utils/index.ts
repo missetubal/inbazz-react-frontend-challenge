@@ -1,18 +1,10 @@
-import {
-  BOOK_STATUS,
-  type BookStatusKey,
-  type GoogleBooksApiItem,
-} from '@/shared';
-import type { Book } from '../../../shared/types';
+import { ReadingStatus, type GoogleBooksApiItem, type Book } from '@/shared';
 
-export const getRandomBookStatus = () => {
-  const statusKeys: BookStatusKey[] = Object.keys(
-    BOOK_STATUS,
-  ) as BookStatusKey[];
-  const randomIndex = Math.floor(Math.random() * statusKeys.length);
-  const randomKey = statusKeys[randomIndex];
+export const getRandomBookStatus = (): ReadingStatus => {
+  const statusValues: ReadingStatus[] = Object.values(ReadingStatus);
+  const randomIndex = Math.floor(Math.random() * statusValues.length);
 
-  return BOOK_STATUS[randomKey];
+  return statusValues[randomIndex];
 };
 
 const mapApiItemToLandingBook = (item: GoogleBooksApiItem): Book | null => {
@@ -28,8 +20,8 @@ const mapApiItemToLandingBook = (item: GoogleBooksApiItem): Book | null => {
     description: item.volumeInfo.description,
     authors: item.volumeInfo.authors?.join(', '),
     publishedDate: item.volumeInfo.publishedDate,
-    color: randomStatus.colorClass,
-    status: randomStatus.id,
+    status: randomStatus,
+    year: item.volumeInfo.publishedDate?.slice(0, 4) || '-',
   };
 };
 
