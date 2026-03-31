@@ -1,4 +1,6 @@
-import { ReadingStatus, type GoogleBooksApiItem, type Book } from '@/shared';
+import { ReadingStatus } from '@/shared/enums/reading-status';
+import type { GoogleBooksApiItem } from '@/shared/services/types';
+import type { Book } from '@/shared/types';
 
 export const getRandomBookStatus = (): ReadingStatus => {
   const statusValues: ReadingStatus[] = Object.values(ReadingStatus);

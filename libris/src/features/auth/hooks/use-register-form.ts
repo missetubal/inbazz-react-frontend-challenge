@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useState, type Dispatch, type SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
 import { createRegisterSchema, type RegisterSchema } from '../schemas';
+import { toast } from 'sonner';
 
 interface UseRegisterFormResult {
   form: ReturnType<typeof useForm<RegisterSchema>>;
@@ -38,8 +39,8 @@ export function useRegisterForm(): UseRegisterFormResult {
     try {
       await register(formValues);
       if (isAuthenticated) navigate({ to: '/' });
-    } catch (err) {
-      console.error('Register failed', err);
+    } catch {
+      toast.error(t('register.error'));
     }
   };
 

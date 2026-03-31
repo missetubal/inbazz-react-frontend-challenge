@@ -7,11 +7,15 @@ const config: Config = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
+  testMatch: ['**/*.test.(ts|tsx)'],
   transform: {
-    '^.+\.tsx?$': [
+    '^.+\\.tsx?$': [
       'ts-jest',
       {
         tsconfig: 'tsconfig.test.json',
+        diagnostics: {
+          ignoreCodes: [1343],
+        },
       },
     ],
   },
