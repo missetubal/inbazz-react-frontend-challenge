@@ -16,7 +16,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { BookOpen, Trash2 } from 'lucide-react';
 import { useGetShelfData } from '../hooks/use-shelf-data';
 import { ReadingStatusBadge } from '@/components/custom';
-import type { Book } from '@/shared';
+import { ReadingStatus, type Book } from '@/shared';
 
 export const ShelfTable = () => {
   const { t, sortedBooks, handleRemoveBook, handleUpdateStatus } =
@@ -31,7 +31,7 @@ export const ShelfTable = () => {
             <TableHead>{t('shelf.table.title')}</TableHead>
             <TableHead>{t('shelf.table.authors')}</TableHead>
             <TableHead>{t('shelf.table.publishedDate')}</TableHead>
-            <TableHead>{t('shelf.table.status')}</TableHead>
+            <TableHead>{t('shelf.table.status.label')}</TableHead>
             <TableHead className='text-right'>
               {t('shelf.table.actions')}
             </TableHead>
@@ -87,14 +87,14 @@ export const ShelfTable = () => {
                       <ReadingStatusBadge status={book.status} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value='want_to_read'>
-                        {t('shelf.table.wantToRead')}
+                      <SelectItem value={ReadingStatus.WANT_TO_READ}>
+                        {t('shelf.table.status.wantToRead')}
                       </SelectItem>
-                      <SelectItem value='reading'>
-                        {t('shelf.table.reading')}
+                      <SelectItem value={ReadingStatus.READING}>
+                        {t('shelf.table.status.reading')}
                       </SelectItem>
-                      <SelectItem value='completed'>
-                        {t('shelf.table.completed')}
+                      <SelectItem value={ReadingStatus.FINISHED}>
+                        {t('shelf.table.status.completed')}
                       </SelectItem>
                     </SelectContent>
                   </Select>

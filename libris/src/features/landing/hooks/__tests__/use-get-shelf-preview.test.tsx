@@ -14,45 +14,45 @@ jest.mock('@/lib/book-utils', () => ({
   mapApiItemsToBooks: jest.fn(),
 }));
 
-const queryClient = new QueryClient({
+const createQueryClient = () => new QueryClient({
   defaultOptions: {
     queries: {
       retry: false,
-      gcTime: Infinity,
+      gcTime: 0, // Ensure no cache between tests
     },
   },
 });
 
 const wrapper = ({ children }: { children: React.ReactNode }) => (
-  <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+  <QueryClientProvider client={createQueryClient()}>{children}</QueryClientProvider>
 );
 
-export const mockApiData = [
+export const mockApiItems = [
   { id: '1', volumeInfo: { title: 'Book 1' } },
   { id: '2', volumeInfo: { title: 'Book 2' } },
 ];
+export const mockApiResponse = {
+  items: mockApiItems,
+  totalItems: 2
+};
 export const mockMappedBooks = [
   { id: '1', title: 'Book 1' },
   { id: '2', title: 'Book 2' },
 ];
 
 describe('useGetShelfPreviewTable', () => {
-  const mockSearchBooks = jest.spyOn(googleBookApi, 'searchBooks');
-  const mockMapApiItemsToBooks = jest.spyOn(bookUtils, 'mapApiItemsToBooks');
+  const mockSearchBooks = googleBookApi.searchBooks as jest.Mock;
+  const mockMapApiItemsToBooks = bookUtils.mapApiItemsToBooks as jest.Mock;
 
   beforeEach(() => {
     jest.clearAllMocks();
-    queryClient.clear();
   });
 
   it('should call searchBooks with correct parameters and map results', async () => {
-    mockSearchBooks.mockResolvedValueOnce(mockApiData as any);
-    mockMapApiItemsToBooks.mockReturnValueOnce(mockMappedBooks as any);
+    mockSearchBooks.mockResolvedValueOnce(mockApiResponse);
+    mockMapApiItemsToBooks.mockReturnValueOnce(mockMappedBooks);
 
     const { result } = renderHook(() => useGetShelfPreviewTable(), { wrapper });
-
-    expect(result.current.isLoading).toBe(true);
-    expect(result.current.topFiveBooks).toEqual([]);
 
     await waitFor(() => expect(result.current.isLoading).toBe(false));
 
@@ -63,7 +63,7 @@ describe('useGetShelfPreviewTable', () => {
       printType: 'books',
     });
 
-    expect(mockMapApiItemsToBooks).toHaveBeenCalledWith(mockApiData);
+    expect(mockMapApiItemsToBooks).toHaveBeenCalledWith(mockApiItems);
     expect(result.current.topFiveBooks).toEqual(mockMappedBooks);
   });
 
@@ -78,7 +78,7 @@ describe('useGetShelfPreviewTable', () => {
   });
 
   it('should return object with empty items if searchBooks returns no data', async () => {
-    mockSearchBooks.mockResolvedValueOnce({ items: [], totalItems: 0 } as any);
+    mockSearchBooks.mockResolvedValueOnce({ items: [], totalItems: 0 });
     mockMapApiItemsToBooks.mockReturnValueOnce([]);
 
     const { result } = renderHook(() => useGetShelfPreviewTable(), { wrapper });

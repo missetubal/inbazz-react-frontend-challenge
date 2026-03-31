@@ -14,7 +14,13 @@
       "publishedDate": "Publicado em",
       "actions": "Ações",
       "remove": "Remover",
-      "status": "Status"
+      "status": {
+        "label": "Status",
+        "wantToRead": "Want to read",
+        "reading": "Reading",
+        "finished": "Finished",
+        "unknown": "Unknown"
+      }
     },
     "toast": {
       "added": "Livro adicionado à estante",
