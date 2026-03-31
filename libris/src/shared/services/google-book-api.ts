@@ -17,9 +17,9 @@ export const searchBooks = async ({
   printType = PrintType.ALL,
   langRestrict = 'pt',
   startIndex = 0,
-}: SearchBookRequest): Promise<GoogleBooksApiItem[]> => {
+}: SearchBookRequest): Promise<GoogleBooksApiResponse> => {
   if (!query.trim()) {
-    return [];
+    return { items: [], totalItems: 0 };
   }
 
   try {
@@ -45,7 +45,7 @@ export const searchBooks = async ({
 
     const data: GoogleBooksApiResponse = await response.json();
 
-    return data.items ?? [];
+    return data;
   } catch (err) {
     console.error('Error in searchBooks:', err);
     throw err;

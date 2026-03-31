@@ -1,10 +1,10 @@
 import { searchBooks } from '@/shared/services/google-book-api';
-import type { GoogleBooksApiItem } from '@/shared/services/types';
+import type { GoogleBooksApiResponse } from '@/shared/services/types';
 import { useQuery } from '@tanstack/react-query';
 import { mapApiItemsToBooks } from '../../../lib/book-utils';
 
 export const useGetHeroBooks = () => {
-  const { data, isLoading } = useQuery<GoogleBooksApiItem[], Error>({
+  const { data, isLoading } = useQuery<GoogleBooksApiResponse, Error>({
     queryKey: ['heroLandingPage'],
     queryFn: () =>
       searchBooks({
@@ -15,7 +15,7 @@ export const useGetHeroBooks = () => {
       }),
   });
 
-  const heroBooks = data ? mapApiItemsToBooks(data) : [];
+  const heroBooks = data?.items ? mapApiItemsToBooks(data.items) : [];
   return {
     heroBooks,
     isLoading,

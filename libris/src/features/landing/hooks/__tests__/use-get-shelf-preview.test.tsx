@@ -77,8 +77,8 @@ describe('useGetShelfPreviewTable', () => {
     expect(result.current.topFiveBooks).toEqual([]);
   });
 
-  it('should return empty array if searchBooks returns no data', async () => {
-    mockSearchBooks.mockResolvedValueOnce([]);
+  it('should return object with empty items if searchBooks returns no data', async () => {
+    mockSearchBooks.mockResolvedValueOnce({ items: [], totalItems: 0 } as any);
     mockMapApiItemsToBooks.mockReturnValueOnce([]);
 
     const { result } = renderHook(() => useGetShelfPreviewTable(), { wrapper });

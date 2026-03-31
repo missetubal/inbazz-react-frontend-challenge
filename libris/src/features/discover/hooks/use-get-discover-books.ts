@@ -3,7 +3,7 @@ import {
   OrderBy,
   PrintType,
   searchBooks,
-  type GoogleBooksApiItem,
+  type GoogleBooksApiResponse,
   type OrderByOption,
   type PrintTypeOption,
 } from '@/shared';
@@ -29,7 +29,7 @@ export const useGetDiscoverBooks = (): UseGetDiscoverBooksResult => {
   const searchedBooks = debouncedQuery ? debouncedQuery : 'populares';
 
   const { data, isLoading, isError, error } = useQuery<
-    GoogleBooksApiItem[],
+    GoogleBooksApiResponse,
     Error
   >({
     queryKey: ['books', debouncedQuery, printType, orderBy, page],
@@ -46,16 +46,13 @@ export const useGetDiscoverBooks = (): UseGetDiscoverBooksResult => {
     staleTime: 1000 * 60 * 5,
   });
 
-  const totalItemsEstimate =
-    data && data.length < PAGE_SIZE && page > 0
-      ? page * PAGE_SIZE + data.length
-      : (page + 2) * PAGE_SIZE;
-
-  const totalPages = Math.ceil(Math.min(totalItemsEstimate, 1000) / PAGE_SIZE);
+  const totalPages = Math.ceil(
+    Math.min(data?.totalItems ?? 0, 1000) / PAGE_SIZE,
+  );
 
   const hasUserTyped = !!debouncedQuery.trim();
 
-  const apiToBooks = data ? mapApiItemsToBooks(data) : [];
+  const apiToBooks = data && data.items ? mapApiItemsToBooks(data.items) : [];
 
   return {
     PAGE_SIZE,
