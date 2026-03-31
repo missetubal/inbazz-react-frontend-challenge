@@ -3,7 +3,7 @@ import { DiscoverResults, SearchFilter } from './components';
 import { useGetDiscoverBooks } from './hooks/use-get-discover-books';
 
 export const DiscoverWrapper = () => {
-  const { t } = useTranslation('discover');
+  const { t } = useTranslation('shelfAndDiscover');
 
   const {
     query,
@@ -27,9 +27,9 @@ export const DiscoverWrapper = () => {
     <div className='space-y-8'>
       <div>
         <h1 className='text-3xl sm:text-4xl font-serif font-bold tracking-tight'>
-          {t('title')}
+          {t('discover.title')}
         </h1>
-        <p className='text-muted-foreground mt-1'>{t('subtitle')}</p>
+        <p className='text-muted-foreground mt-1'>{t('discover.subtitle')}</p>
       </div>
       <SearchFilter
         orderBy={orderBy}
@@ -49,7 +49,6 @@ export const DiscoverWrapper = () => {
         page={page}
         totalPages={totalPages}
         setPage={setPage}
-        
       />
     </div>
   );

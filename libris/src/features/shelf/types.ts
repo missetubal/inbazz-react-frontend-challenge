@@ -1,4 +1,4 @@
-import type { Book, BookStatusKey } from '@/shared';
+import type { Book, ReadingStatus } from '@/shared';
 
 export interface ShelfState {
   userShelves: Record<string, Book[]>;
@@ -7,6 +7,6 @@ export interface ShelfState {
   setUserId: (userId: string | null) => void;
   removeBook: (bookId: string) => void;
   addBook: (book: Book) => void;
-  updateStatus: (bookId: string, newStatus: BookStatusKey) => void;
+  updateStatus: (bookId: string, newStatus: ReadingStatus) => void;
   isOnShelf: (bookId: string) => boolean;
 }

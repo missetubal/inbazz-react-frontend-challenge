@@ -10,7 +10,7 @@ export const useGetShelfData = () => {
   const [sortBy, setSortBy] = useState<keyof Book>('title');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
 
-  const { t } = useTranslation('shelf');
+  const { t } = useTranslation('shelfAndDiscover');
 
   const sortedBooks = useMemo(() => {
     const arrBooks = [...books];
@@ -47,12 +47,12 @@ export const useGetShelfData = () => {
 
   const handleRemoveBook = (bookId: string) => {
     removeBook(bookId);
-    toast.success(t('shelf.bookRemoved'));
+    toast.success(t('shelf.toast.removed'));
   };
 
   const handleUpdateStatus = (bookId: string, newStatus: Book['status']) => {
     updateStatus(bookId, newStatus);
-    toast.success(t('shelf.statusUpdated'));
+    toast.success(t('shelf.toast.statusUpdated'));
   };
 
   return {

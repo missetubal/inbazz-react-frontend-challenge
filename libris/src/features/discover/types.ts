@@ -1,8 +1,4 @@
-import type {
-  GoogleBooksApiItem,
-  OrderByOption,
-  PrintTypeOption,
-} from '@/shared';
+import type { OrderByOption, PrintTypeOption, Book } from '@/shared';
 import type { Dispatch, SetStateAction } from 'react';
 
 export interface SearchFilterProps {
@@ -17,7 +13,7 @@ export interface SearchFilterProps {
 export interface UseGetDiscoverBooksResult extends SearchFilterProps {
   page: number;
   setPage: Dispatch<SetStateAction<number>>;
-  data: GoogleBooksApiItem[];
+  data: Book[];
   isLoading: boolean;
   isError: boolean;
   error: Error | null;
@@ -33,7 +29,7 @@ export interface DiscoverResultsProps {
   totalPages: number;
   hasUserTyped: boolean;
   PAGE_SIZE: number;
-  data: GoogleBooksApiItem[];
+  data: Book[];
   page: number;
   setPage: Dispatch<SetStateAction<number>>;
 }

@@ -10,6 +10,7 @@ import {
 import { useQuery } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import type { UseGetDiscoverBooksResult } from '../types';
+import { mapApiItemsToBooks } from '@/lib/book-utils';
 
 export const useGetDiscoverBooks = (): UseGetDiscoverBooksResult => {
   const [query, setQuery] = useState('');
@@ -25,14 +26,12 @@ export const useGetDiscoverBooks = (): UseGetDiscoverBooksResult => {
     setPage(0);
   }, [debouncedQuery, printType, orderBy]);
 
-  const searchedBooks = debouncedQuery ? debouncedQuery : 'best sellers';
+  const searchedBooks = debouncedQuery ? debouncedQuery : 'populares';
 
-  const {
-    data,
-    isFetching: isLoading,
-    isError,
-    error,
-  } = useQuery<GoogleBooksApiItem[], Error>({
+  const { data, isLoading, isError, error } = useQuery<
+    GoogleBooksApiItem[],
+    Error
+  >({
     queryKey: ['books', debouncedQuery, printType, orderBy, page],
     queryFn: () =>
       searchBooks({
@@ -56,9 +55,11 @@ export const useGetDiscoverBooks = (): UseGetDiscoverBooksResult => {
 
   const hasUserTyped = !!debouncedQuery.trim();
 
+  const apiToBooks = data ? mapApiItemsToBooks(data) : [];
+
   return {
     PAGE_SIZE,
-    data: data ?? [],
+    data: apiToBooks,
     isLoading,
     isError,
     error,

@@ -7,7 +7,9 @@ export const getRandomBookStatus = (): ReadingStatus => {
   return statusValues[randomIndex];
 };
 
-const mapApiItemToLandingBook = (item: GoogleBooksApiItem): Book | null => {
+export const mapApiItemToBook = (
+  item: GoogleBooksApiItem,
+): Book | null => {
   if (!item.volumeInfo.title) return null;
   if (!item.volumeInfo.previewLink) return null;
 
@@ -25,8 +27,8 @@ const mapApiItemToLandingBook = (item: GoogleBooksApiItem): Book | null => {
   };
 };
 
-export const mapApiItemsToLandingBooks = (
+export const mapApiItemsToBooks = (
   books: GoogleBooksApiItem[],
 ): Book[] => {
-  return books.map(mapApiItemToLandingBook).filter((b) => b !== null);
+  return books.map(mapApiItemToBook).filter((b) => b !== null);
 };

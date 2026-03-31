@@ -24,7 +24,7 @@ export const SearchFilter = ({
   setPrintType,
   setQuery,
 }: SearchFilterProps) => {
-  const { t } = useTranslation('discover');
+  const { t } = useTranslation('shelfAndDiscover');
   return (
     <div className='flex flex-col sm:flex-row gap-3'>
       <div className='relative flex-1'>
@@ -32,36 +32,36 @@ export const SearchFilter = ({
         <Input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder={t('filter.searchPlaceholder')}
-          className='pl-11 h-12 bg-secondary/50 text-base'
+          placeholder={t('discover.filter.searchPlaceholder')}
+          className='pl-11 h-10 bg-secondary/50 text-base'
         />
       </div>
       <Select
-        value={t(`filter.type.${printType}`)}
+        value={t(`discover.filter.type.${printType}`)}
         onValueChange={(value) => setPrintType(value as PrintTypeOption)}
       >
         <SelectTrigger className='w-full sm:w-36 h-12 bg-secondary/50'>
-          <SelectValue placeholder={t('filter.type.all')} />
+          <SelectValue placeholder={t('discover.filter.type.all')} />
         </SelectTrigger>
         <SelectContent>
           {getPrintTypeOptions().map((option) => (
             <SelectItem key={option} value={option}>
-              {t(`filter.type.${option}`)}
+              {t(`discover.filter.type.${option}`)}
             </SelectItem>
           ))}
         </SelectContent>
       </Select>
       <Select
-        value={t(`filter.order.${orderBy}`)}
+        value={t(`discover.filter.order.${orderBy}`)}
         onValueChange={(value) => setOrderBy(value as OrderByOption)}
       >
         <SelectTrigger className='w-full sm:w-40 h-12 bg-secondary/50'>
-          <SelectValue placeholder={t('filter.order.relevance')} />
+          <SelectValue placeholder={t('discover.filter.order.relevance')} />
         </SelectTrigger>
         <SelectContent>
           {getOrderByOptions().map((option) => (
             <SelectItem key={option} value={option}>
-              {t(`filter.order.${option}`)}
+              {t(`discover.filter.order.${option}`)}
             </SelectItem>
           ))}
         </SelectContent>

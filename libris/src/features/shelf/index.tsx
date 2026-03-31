@@ -7,9 +7,9 @@ export const ShelfWrapper = () => {
   return (
     <div>
       <h1 className='text-3xl sm:text-4xl font-serif font-bold tracking-tight'>
-        {t('title')}
+        {t('shelf.title')}
       </h1>
-      <p className='text-muted-foreground mt-1'>{t('subtitle')}</p>
+      <p className='text-muted-foreground mt-1'>{t('shelf.subtitle')}</p>
       {sortedBooks.length === 0 ? <ShelfEmptyState /> : <ShelfTable />}
     </div>
   );
