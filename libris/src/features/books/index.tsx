@@ -184,7 +184,6 @@ export const BookDetailsWrapper = () => {
             </div>
           )}
 
-          {/* Synopsis */}
           <div className='mt-8'>
             <h2 className='text-lg font-serif font-semibold mb-3 flex items-center gap-2'>
               <BookMarked className='w-5 h-5 text-primary' />
@@ -197,7 +196,6 @@ export const BookDetailsWrapper = () => {
                     className='prose prose-sm dark:prose-invert max-w-none text-muted-foreground leading-relaxed'
                     dangerouslySetInnerHTML={{ __html: description }}
                   />
-                  {description}
                 </CardContent>
               </Card>
             ) : (
