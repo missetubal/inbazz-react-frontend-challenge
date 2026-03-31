@@ -36,7 +36,7 @@ export const BookDetailsWrapper = () => {
         </p>
         <Button
           variant='outline'
-          onClick={() => navigate({ to: '..' })}
+          onClick={() => navigate({ to: '/discover' })}
           className='mt-4 gap-2'
         >
           <ArrowLeft className='w-4 h-4' />
@@ -66,7 +66,7 @@ export const BookDetailsWrapper = () => {
     >
       <Button
         variant='ghost'
-        onClick={() => navigate({ to: '..' })}
+        onClick={() => navigate({ to: '/shelf' })}
         className='gap-2 -ml-2 text-muted-foreground hover:text-foreground'
       >
         <ArrowLeft className='w-4 h-4' />
@@ -74,7 +74,6 @@ export const BookDetailsWrapper = () => {
       </Button>
 
       <div className='flex flex-col md:flex-row gap-8 lg:gap-12'>
-        {/* Cover */}
         <div className='shrink-0 mx-auto md:mx-0'>
           <div className='w-48 sm:w-56 rounded-xl overflow-hidden shadow-2xl shadow-primary/10 bg-secondary/50'>
             {thumb ? (
@@ -94,7 +93,6 @@ export const BookDetailsWrapper = () => {
             <Button
               onClick={handleToggleShelf}
               className={`w-full gap-2 ${onShelf ? 'bg-green-600 hover:bg-green-700' : ''}`}
-              variant={onShelf ? 'default' : 'default'}
             >
               {onShelf ? (
                 <>
@@ -111,7 +109,12 @@ export const BookDetailsWrapper = () => {
 
             {previewLink && (
               <Button variant='outline' className='w-full gap-2'>
-                <a href={previewLink} target='_blank' rel='noopener noreferrer'>
+                <a
+                  href={previewLink}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='flex flex-row gap-2 max-w-fit'
+                >
                   <ExternalLink className='w-4 h-4' />
                   {t('shelf.bookDetails.preview')}
                 </a>
