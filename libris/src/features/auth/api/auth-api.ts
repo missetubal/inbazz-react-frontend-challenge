@@ -35,6 +35,7 @@ export async function register({
   password,
 }: RegisterRequest): Promise<AuthResponse> {
   await simulateNetworkDelay(1500);
+  console.log(password);
 
   const user: User = {
     id: `user-${Date.now()}`,

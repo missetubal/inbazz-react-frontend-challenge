@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": false,
+    "types": ["node", "jest", "vite/client"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts",
+    "jest.setup.ts", 
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}

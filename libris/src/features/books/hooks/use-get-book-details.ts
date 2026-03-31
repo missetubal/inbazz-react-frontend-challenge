@@ -4,7 +4,7 @@ import { getBookDetailsById, type GoogleBookDetailsItem } from '@/shared';
 import { useQuery } from '@tanstack/react-query';
 import type { TFunction } from 'node_modules/i18next/typescript/t';
 import { useTranslation } from 'react-i18next';
-// import { toast } from 'sonner';
+import { toast } from 'sonner';
 
 export interface UseBookDetailResult {
   book: GoogleBookDetailsItem | undefined;
@@ -41,14 +41,14 @@ export const useGetBookDetail = ({
     if (!book) return;
     if (onShelf) {
       removeBook(book.id);
-      // toast.success(t('detail.removed'));
+      toast.success(t('detail.removed'));
     } else {
       const newBook = mapApiItemToBook(book);
 
       if (newBook) {
         addBook(newBook);
       }
-      //   toast({ title: t('detail.added') });
+      toast.success(t('detail.added'));
     }
   };
   return {

@@ -17,7 +17,7 @@ interface UseLoginResult {
 
 export function useLogin(): UseLoginResult {
   const { t } = useTranslation('auth');
-  const { login, isLoading, error, isAuthenticated } = useAuthStore();
+  const { login, isLoading, error } = useAuthStore();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -32,7 +32,9 @@ export function useLogin(): UseLoginResult {
   const handleLoginSubmit = async (formValues: LoginSchema) => {
     try {
       await login(formValues);
-      if (isAuthenticated) navigate({ to: '/' });
+      if (useAuthStore.getState().isAuthenticated) {
+        navigate({ to: '/' });
+      }
     } catch (err) {
       console.error('Login failed', err);
     }
