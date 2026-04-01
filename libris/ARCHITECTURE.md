@@ -1,6 +1,6 @@
 # Architecture Overview
 
-Este documento descreve a arquitetura do projeto **libris**, com foco em:
+Este documento descreve a arquitetura do projeto **Libris**, com foco em:
 
 - Estrutura de pastas escolhida
 - Como a autenticação foi gerenciada sem backend

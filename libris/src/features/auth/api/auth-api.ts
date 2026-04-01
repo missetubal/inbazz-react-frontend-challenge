@@ -32,10 +32,8 @@ export async function login({
 export async function register({
   email,
   name,
-  password,
 }: RegisterRequest): Promise<AuthResponse> {
   await simulateNetworkDelay(1500);
-  console.log(password);
 
   const user: User = {
     id: `user-${Date.now()}`,

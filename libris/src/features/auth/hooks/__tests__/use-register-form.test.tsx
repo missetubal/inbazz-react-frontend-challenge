@@ -98,6 +98,7 @@ describe('useRegisterForm', () => {
       email: 'new@example.com',
       password: 'password123',
     });
+    expect(mockNavigate).toHaveBeenCalledWith({ to: '/discover' });
     expect(useAuthStore.getState().isAuthenticated).toBe(true);
     expect(useAuthStore.getState().user).toEqual({
       id: '2',

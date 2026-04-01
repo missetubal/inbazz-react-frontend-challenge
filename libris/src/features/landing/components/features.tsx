@@ -16,7 +16,7 @@ export const Features = () => {
           </p>
         </FadeInSection>
 
-        <div className='grid sm:grid-cols-2 lg:grid-cols-4 gap-6'>
+        <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
           {FEATURES.map((feature, index) => (
             <FadeInSection key={feature.title} delay={index * 0.1}>
               <div className='group p-6 rounded-2xl border border-border/50 bg-card hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 h-full'>

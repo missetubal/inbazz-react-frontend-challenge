@@ -80,7 +80,7 @@ describe('useLogin', () => {
     });
 
     expect(authApi.login).toHaveBeenCalledWith(testValues);
-    expect(mockNavigate).toHaveBeenCalledWith({ to: '/' });
+    expect(mockNavigate).toHaveBeenCalledWith({ to: '/shelf' });
     expect(useAuthStore.getState().isAuthenticated).toBe(true);
   });
 

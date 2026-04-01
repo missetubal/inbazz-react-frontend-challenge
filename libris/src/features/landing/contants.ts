@@ -1,4 +1,4 @@
-import { BookMarked, Library, Search, Sparkles } from 'lucide-react';
+import { BookMarked, Library, Search } from 'lucide-react';
 
 export const FEATURES = [
   {
@@ -18,12 +18,6 @@ export const FEATURES = [
     title: 'features.items.bookMarked.title',
     description: 'features.items.bookMarked.description',
     color: 'bg-emerald-500/10 text-emerald-500',
-  },
-  {
-    icon: Sparkles,
-    title: 'features.items.sparkles.title',
-    description: 'features.items.sparkles.description',
-    color: 'bg-purple-500/10 text-purple-500',
   },
 ];
 

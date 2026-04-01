@@ -68,7 +68,7 @@ export const AppLayout = () => {
               <span className='text-sm text-muted-foreground'>
                 {user?.name}
               </span>
-              <Button variant='ghost' size='icon' onClick={logout}>
+              <Button variant='ghost' size='icon' onClick={handleLogout}>
                 <LogOut className='w-4 h-4' />
                 <span className='sr-only'>{t('nav.logout')}</span>
               </Button>

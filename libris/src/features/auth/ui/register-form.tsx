@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useLogin, useRegisterForm } from '../hooks';
+import { useRegisterForm } from '../hooks';
 import { FormProvider } from 'react-hook-form';
 import { FormField } from '@/components/custom';
 import { Button } from '@/components/ui';

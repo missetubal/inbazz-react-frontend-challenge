@@ -20,7 +20,7 @@ interface UseRegisterFormResult {
 
 export function useRegisterForm(): UseRegisterFormResult {
   const { t } = useTranslation('auth');
-  const { register, isLoading, error, isAuthenticated } = useAuthStore();
+  const { register, isLoading, error } = useAuthStore();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -35,10 +35,12 @@ export function useRegisterForm(): UseRegisterFormResult {
     },
   });
 
-  const handleLoginSubmit = async (formValues: RegisterSchema) => {
+  const handleRegisterSubmit = async (formValues: RegisterSchema) => {
     try {
       await register(formValues);
-      if (isAuthenticated) navigate({ to: '/' });
+      if (useAuthStore.getState().isAuthenticated) {
+        navigate({ to: '/discover' });
+      }
     } catch {
       toast.error(t('register.error'));
     }
@@ -50,7 +52,7 @@ export function useRegisterForm(): UseRegisterFormResult {
     error,
     showPassword,
     showConfirmPassword,
-    handleRegisterSubmit: handleLoginSubmit,
+    handleRegisterSubmit,
     setShowPassword,
     setShowConfirmPassword,
   };

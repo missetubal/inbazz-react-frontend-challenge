@@ -1,6 +1,6 @@
 import { ReadingStatus } from '@/shared/enums/reading-status';
 import type { GoogleBooksApiItem } from '@/shared/services/types';
-import { mapApiItemToBook, mapApiItemsToBooks } from '../book-utils';
+import { mapApiItemToBook, mapApiItemsToBooks, getRandomBookStatus } from '../book-utils';
 
 jest.mock('@/shared', () => ({
   searchBooks: jest.fn(),
@@ -11,6 +11,13 @@ jest.mock('@/shared', () => ({
 describe('book-utils', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+  });
+
+  describe('getRandomBookStatus', () => {
+    it('should return a valid ReadingStatus', () => {
+      const status = getRandomBookStatus();
+      expect(Object.values(ReadingStatus)).toContain(status);
+    });
   });
 
   describe('mapApiItemToBook', () => {

@@ -103,11 +103,11 @@ describe('useGetShelfData', () => {
       result.current.setSortBy('status');
     });
 
-    expect(result.current.sortedBooks[0].status).toBe(ReadingStatus.FINISHED);
-    expect(result.current.sortedBooks[1].status).toBe(ReadingStatus.READING);
-    expect(result.current.sortedBooks[2].status).toBe(
+    expect(result.current.sortedBooks[0].status).toBe(
       ReadingStatus.WANT_TO_READ,
     );
+    expect(result.current.sortedBooks[1].status).toBe(ReadingStatus.READING);
+    expect(result.current.sortedBooks[2].status).toBe(ReadingStatus.FINISHED);
   });
 
   it('should reverse order when sortDirection is desc', () => {
@@ -122,11 +122,26 @@ describe('useGetShelfData', () => {
     expect(result.current.sortedBooks[2].title).toBe('A Book');
   });
 
-  it('should call removeBook and show toast when handleRemoveBook is called', () => {
+  it('should open confirm modal when handleRemoveBook is called', () => {
     const { result } = renderHook(() => useGetShelfData());
 
     act(() => {
       result.current.handleRemoveBook('1');
+    });
+
+    expect(result.current.isRemoveConfirmModalOpen).toBe(true);
+    expect(result.current.bookToRemoveId).toBe('1');
+  });
+
+  it('should call removeBook and show toast when handleConfirmRemoveBook is called', () => {
+    const { result } = renderHook(() => useGetShelfData());
+
+    act(() => {
+      result.current.handleRemoveBook('1');
+    });
+
+    act(() => {
+      result.current.handleConfirmRemoveBook();
     });
 
     expect(mockRemoveBook).toHaveBeenCalledWith('1');

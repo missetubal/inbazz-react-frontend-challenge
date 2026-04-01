@@ -1,11 +1,11 @@
 import { Badge, Card } from '@/components/ui';
-import type { Books } from '@/lib/book-utils';
+import type { Book } from '@/shared/types';
 import { Link } from '@tanstack/react-router';
 import { motion } from 'framer-motion';
 import { BookOpen } from 'lucide-react';
 
 interface BookCardProps {
-  book: Books;
+  book: Book;
   index?: number;
 }
 
