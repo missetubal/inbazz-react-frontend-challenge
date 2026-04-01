@@ -1,7 +1,6 @@
 import {
   PrintType,
   type GoogleBookDetailsItem,
-  type GoogleBooksApiItem,
   type GoogleBooksApiResponse,
   type SearchBookRequest,
 } from './types';
