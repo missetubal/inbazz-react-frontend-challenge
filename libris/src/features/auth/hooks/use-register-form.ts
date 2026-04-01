@@ -38,9 +38,7 @@ export function useRegisterForm(): UseRegisterFormResult {
   const handleRegisterSubmit = async (formValues: RegisterSchema) => {
     try {
       await register(formValues);
-      if (useAuthStore.getState().isAuthenticated) {
-        navigate({ to: '/discover' });
-      }
+      navigate({ to: '/discover' });
     } catch {
       toast.error(t('register.error'));
     }

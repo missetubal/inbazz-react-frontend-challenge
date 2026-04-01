@@ -33,9 +33,7 @@ export function useLogin(): UseLoginResult {
   const handleLoginSubmit = async (formValues: LoginSchema) => {
     try {
       await login(formValues);
-      if (useAuthStore.getState().isAuthenticated) {
-        navigate({ to: '/shelf' });
-      }
+      navigate({ to: '/shelf' });
     } catch (err) {
       console.error('Login failed', err);
       toast.error(t('loginPage.loginForm.toast.errorToast'));

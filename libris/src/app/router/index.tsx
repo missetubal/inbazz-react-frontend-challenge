@@ -5,8 +5,6 @@ import {
   redirect,
   Outlet,
 } from '@tanstack/react-router';
-import { useAuthStore } from '@/features/auth/model/auth-store';
-
 import {
   LoginPage,
   LandingPage,
@@ -17,8 +15,9 @@ import {
 } from '@/pages';
 import { AppLayout } from '@/components/custom';
 
+import { useAuthStore } from '@/features/auth/model/auth-store';
 function RootLayout() {
-  const isAuthenticated = useAuthStore.getState().isAuthenticated;
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
   if (!isAuthenticated) {
     return <Outlet />;
   }
@@ -34,8 +33,7 @@ const loginRoute = createRoute({
   path: '/login',
   component: LoginPage,
   beforeLoad: () => {
-    const isAuthenticated = useAuthStore.getState().isAuthenticated;
-    if (isAuthenticated) {
+    if (useAuthStore.getState().isAuthenticated) {
       throw redirect({ to: '/shelf' });
     }
   },
@@ -46,8 +44,7 @@ const registerRoute = createRoute({
   path: '/register',
   component: RegisterPage,
   beforeLoad: () => {
-    const isAuthenticated = useAuthStore.getState().isAuthenticated;
-    if (isAuthenticated) {
+    if (useAuthStore.getState().isAuthenticated) {
       throw redirect({ to: '/shelf' });
     }
   },
@@ -63,8 +60,7 @@ const authenticatedRoute = createRoute({
   getParentRoute: () => rootRoute,
   id: 'authenticated',
   beforeLoad: ({ location }) => {
-    const isAuthenticated = useAuthStore.getState().isAuthenticated;
-    if (!isAuthenticated) {
+    if (!useAuthStore.getState().isAuthenticated) {
       throw redirect({
         to: '/login',
         search: {
@@ -73,6 +69,7 @@ const authenticatedRoute = createRoute({
       });
     }
   },
+
   component: Outlet,
 });
 

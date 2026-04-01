@@ -56,7 +56,7 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className='flex flex-wrap gap-3 mt-8 justify-center lg:justify-start'
             >
-              <Link to='/login'>
+              <Link to='/register'>
                 <Button
                   size='lg'
                   className='h-12 px-7 text-base font-semibold gap-2'

@@ -10,7 +10,12 @@ import { Toaster } from 'sonner';
 export default function App() {
   const queryClient = new QueryClient();
   const { user, isAuthenticated } = useAuthStore();
+  const initializeAuth = useAuthStore((state) => state.initializeAuth);
   const setShelfUserId = useShelfStore((state) => state.setUserId);
+
+  useEffect(() => {
+    initializeAuth();
+  }, [initializeAuth]);
 
   useEffect(() => {
     if (isAuthenticated && user?.id) {
