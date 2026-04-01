@@ -41,14 +41,14 @@ export const useGetBookDetail = ({
     if (!book) return;
     if (onShelf) {
       removeBook(book.id);
-      toast.success(t('detail.removed'));
+      toast.success(t('shelf.toast.removed'));
     } else {
       const newBook = mapApiItemToBook(book);
 
       if (newBook) {
         addBook(newBook);
       }
-      toast.success(t('detail.added'));
+      toast.success(t('shelf.toast.added'));
     }
   };
   return {

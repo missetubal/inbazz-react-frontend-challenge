@@ -62,8 +62,10 @@ export const AppLayout = () => {
             ))}
           </nav>
           <div className='flex items-center gap-2'>
-            <LanguageToggle />
-            <ThemeToggle />
+            <div className='hidden sm:flex items-center gap-2'>
+              <LanguageToggle />
+              <ThemeToggle />
+            </div>
             <div className='hidden sm:flex items-center gap-2 ml-2 pl-2 border-l border-border'>
               <span className='text-sm text-muted-foreground'>
                 {user?.name}
@@ -111,13 +113,15 @@ export const AppLayout = () => {
                       className='w-full justify-start gap-2'
                     >
                       <item.icon className='w-4 h-4' />
-                      {item.label}
+                      {t(item.label)}
                     </Button>
                   </Link>
                 ))}
                 <div className='flex flex-col gap-2 pt-2 border-t border-border'>
-                  <ThemeToggle />
-                  <LanguageToggle />{' '}
+                  <div className='flex gap-2 items-center'>
+                    <ThemeToggle />
+                    <LanguageToggle />
+                  </div>
                   <Button
                     variant='ghost'
                     size='sm'

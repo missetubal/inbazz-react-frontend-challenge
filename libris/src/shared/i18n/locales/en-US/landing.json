@@ -6,7 +6,7 @@
   },
   "hero": {
     "badge": "Powered by Google Books API",
-    "title": ["Your personal", "library", ", online"],
+    "title": ["Your personal", "library", "online"],
     "subtitle": "Discover books from the Google catalog, organize your reading with custom statuses, and keep your bookshelf always at hand.",
     "buttons": {
       "createMyBookshelf": "Create my bookshelf",
@@ -15,19 +15,19 @@
   },
   "features": {
     "title": "Everything you need",
-    "subtitle": "A complete reading management experience, right in your browser.",
+    "subtitle": "Organize your reading, discover new books and keep everything under control in one place.",
     "items": {
       "search": {
         "title": "Discover Millions of Books",
-        "description": "Powerful search with debounce connected to the Google Books API. Filter by type and order."
+        "description": "Search by title, author or ISBN and filter Google Books results to quickly get to the books that really interest you."
       },
       "library": {
-        "title": "Your Virtual Bookshelf",
-        "description": "Save books with custom statuses: Want to Read, Reading, or Finished. Data persisted locally."
+        "title": "Your shelf, your way",
+        "description": "Save books, mark them as Want to read, Reading or Finished, and track your reading progress whenever you want."
       },
       "bookMarked": {
         "title": "Complete Details",
-        "description": "Synopsis, publisher, ISBN, categories, and direct link to preview on Google Books."
+        "description": "Read the synopsis, check publisher, categories, language and more details — with a direct link to the preview on Google Books."
       },
       "sparkles": {
         "title": "Modern Experience",

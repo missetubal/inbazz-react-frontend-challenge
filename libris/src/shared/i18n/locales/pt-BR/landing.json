@@ -6,7 +6,7 @@
   },
   "hero": {
     "badge": "Fornecido pela API do Google Books",
-    "title": ["Sua biblioteca", "pessoal", ", online"],
+    "title": ["Sua biblioteca", "pessoal", "online"],
     "subtitle": "Descubra livros no acervo do Google, organize sua leitura com status personalizados e mantenha sua estante sempre à mão.",
     "buttons": {
       "createMyBookshelf": "Criar minha estante",
@@ -15,19 +15,19 @@
   },
   "features": {
     "title": "Tudo que você precisa",
-    "subtitle": " Uma experiência completa de gerenciamento de leitura, diretamente no seu navegador.",
+    "subtitle": "Organize suas leituras, descubra novos livros e mantenha tudo sob controle em um só lugar.",
     "items": {
       "search": {
         "title": "Descubra Milhões de Livros",
-        "description": "Busca poderosa com debounce conectada à API do Google Books. Filtre por tipo e ordenação."
+        "description": "Busque por título, autor ou ISBN e filtre os resultados do Google Books para chegar rápido nos livros que realmente te interessam."
       },
       "library": {
-        "title": "Sua Estante Virtual",
-        "description": "Salve livros com status personalizados: Quero Ler, Lendo ou Concluído. Dados persistidos localmente."
+        "title": "Sua estante, do seu jeito",
+        "description": "Salve livros, marque como Quero Ler, Lendo ou Concluído e veja sua evolução de leitura sempre que quiser."
       },
       "bookMarked": {
         "title": "Detalhes Completos",
-        "description": "Sinopse, editora, ISBN, categorias e link direto para preview no Google Books."
+        "description": "Leia sinopse, confira editora, categorias, idioma e outros detalhes — com link direto para o preview no Google Books."
       },
       "sparkles": {
         "title": "Experiência Moderna",
