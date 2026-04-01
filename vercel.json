@@ -1,0 +1,17 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "builds": [
+    {
+      "src": "libris/package.json",
+      "use": "@vercel/node@2.x",
+      "config": {
+        "includeFiles": ["libris/**"]
+      }
+    }
+  ]
+}
