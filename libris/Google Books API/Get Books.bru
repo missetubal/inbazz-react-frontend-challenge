@@ -1,0 +1,16 @@
+meta {
+  name: Get Books
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://www.googleapis.com/books/v1/volumes?q=livros&printType=books
+  body: none
+  auth: inherit
+}
+
+params:query {
+  q: livros
+  printType: books
+}

@@ -1,0 +1,67 @@
+{
+  "navbar": {
+    "name": "Libris",
+    "login": "Login",
+    "start": "Get Started"
+  },
+  "hero": {
+    "badge": "Powered by Google Books API",
+    "title": ["Your personal", "library", "online"],
+    "subtitle": "Discover books from the Google catalog, organize your reading with custom statuses, and keep your bookshelf always at hand.",
+    "buttons": {
+      "createMyBookshelf": "Create my bookshelf",
+      "alreadyHaveAccount": "Already have an account"
+    }
+  },
+  "features": {
+    "title": "Everything you need",
+    "subtitle": "Organize your reading, discover new books and keep everything under control in one place.",
+    "items": {
+      "search": {
+        "title": "Discover Millions of Books",
+        "description": "Search by title, author or ISBN and filter Google Books results to quickly get to the books that really interest you."
+      },
+      "library": {
+        "title": "Your shelf, your way",
+        "description": "Save books, mark them as Want to read, Reading or Finished, and track your reading progress whenever you want."
+      },
+      "bookMarked": {
+        "title": "Complete Details",
+        "description": "Read the synopsis, check publisher, categories, language and more details with a direct link to the preview on Google Books."
+      },
+      "sparkles": {
+        "title": "Modern Experience",
+        "description": "Dark/light theme, PT/EN internationalization, smooth animations, and responsive design."
+      }
+    }
+  },
+  "shelfPreview": {
+    "title": "Your organized bookshelf",
+    "subtitle": "View all your books in an elegant table, change statuses, and remove with a click.",
+    "table": {
+      "cover": "Cover",
+      "title": "Title",
+      "author": "Author",
+      "published": "Publication",
+      "status": "Status"
+    }
+  },
+  "cta": {
+    "title": "Start reading with more organization",
+    "subtitle": "Create your virtual bookshelf right now. No complicated registration, no server data — everything stays in your browser.",
+    "joinNow": "Join now"
+  },
+  "stats": {
+    "items": {
+      "availableBooks": "Available books",
+      "free": "Free",
+      "status": "Reading status",
+      "language": "Languages"
+    }
+  },
+  "footer": {
+    "name": "Libris",
+    "data": "Data provided by ",
+    "api": "Google Books API"
+  }
+}

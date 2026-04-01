@@ -1,0 +1,87 @@
+{
+  "shelf": {
+    "title": "My Shelf",
+    "subtitle": "Track your books and organize your reading",
+    "emptyState": {
+      "title": "Your shelf is empty",
+      "description": "Discover books and add them to your collection.",
+      "goDiscover": "Discover Books"
+    },
+    "table": {
+      "cover": "Cover",
+      "title": "Title",
+      "authors": "Authors",
+      "publishedDate": "Published on",
+      "actions": "Actions",
+      "remove": "Remove",
+      "status": {
+        "label": "Status",
+        "wantToRead": "Want to read",
+        "reading": "Reading",
+        "finished": "Finished",
+        "unknown": "Unknown"
+      },
+      "filters": {
+        "byTitle": "By title",
+        "byStatus": "By status"
+      }
+    },
+    "toast": {
+      "added": "Book added to shelf",
+      "removed": "Book removed from shelf",
+      "statusUpdated": "Reading status updated"
+    },
+    "removeConfirmModal": {
+      "title": "Confirm Removal",
+      "description": "Are you sure you want to remove \"{{bookTitle}}\" from your shelf? This action cannot be undone.",
+      "cancel": "Cancel",
+      "confirm": "Remove"
+    },
+    "bookDetails": {
+      "cover": "Cover",
+      "title": "Title",
+      "authors": "Authors",
+      "publishedDate": "Published on",
+      "publisher": "Publisher",
+      "actions": "Actions",
+      "remove": "Remove",
+      "isbn": "ISBN",
+      "pageCount": "Page count",
+      "preview": "View on Google Books",
+      "addToShelf": "Add to Shelf",
+      "removeFromShelf": "Remove from Shelf",
+      "updateStatus": "Update Reading Status",
+      "synopsis": "Synopsis",
+      "noSynopsis": "No synopsis available.",
+      "notFound": "Book not found on shelf",
+      "back": "Back to Shelf",
+      "language": "Language",
+      "categories": "Categories"
+    }
+  },
+
+  "discover": {
+    "title": "Discover books, organize your reading",
+    "subtitle": "Explore the Google Books catalog, save your favorites and keep your virtual shelf always at hand.",
+    "filter": {
+      "searchPlaceholder": "Search by title, author or ISBN",
+      "type": {
+        "all": "All",
+        "books": "Books",
+        "magazines": "Magazines"
+      },
+      "order": {
+        "relevance": "Relevance",
+        "newest": "Newest"
+      }
+    },
+    "results": {
+      "noResults": "No books found. Try adjusting your search.",
+      "pages": {
+        "page": "Page {{current}} of {{totalPages}}",
+        "prev": "Previous",
+        "next": "Next"
+      }
+    }
+  }
+}

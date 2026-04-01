@@ -1,0 +1,11 @@
+meta {
+  name: Get Book by Id
+  type: http
+  seq: 5
+}
+
+get {
+  url: https://www.googleapis.com/books/v1/volumes/${id}
+  body: none
+  auth: inherit
+}

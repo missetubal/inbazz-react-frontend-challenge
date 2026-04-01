@@ -1,0 +1,87 @@
+{
+  "shelf": {
+    "title": "Minha Estante",
+    "subtitle": "Acompanhe seus livros e organize sua leitura",
+    "emptyState": {
+      "title": "Sua estante está vazia",
+      "description": "Descubra livros e adicione à sua coleção.",
+      "goDiscover": "Descobrir Livros"
+    },
+    "table": {
+      "cover": "Capa",
+      "title": "Título",
+      "authors": "Autores",
+      "publishedDate": "Publicado em",
+      "actions": "Ações",
+      "remove": "Remover",
+      "status": {
+        "label": "Status",
+        "wantToRead": "Quero ler",
+        "reading": "Lendo",
+        "finished": "Concluído",
+        "unknown": "Unknown"
+      },
+      "filters": {
+        "byTitle": "Por título",
+        "byStatus": "Por status"
+      }
+    },
+    "toast": {
+      "added": "Livro adicionado à estante",
+      "removed": "Livro removido da estante",
+      "statusUpdated": "Status de leitura atualizado"
+    },
+    "removeConfirmModal": {
+      "title": "Confirmar Remoção",
+      "description": "Tem certeza que deseja remover \"{{bookTitle}}\" da sua estante? Esta ação não pode ser desfeita.",
+      "cancel": "Cancelar",
+      "confirm": "Remover"
+    },
+    "bookDetails": {
+      "cover": "Capa",
+      "title": "Título",
+      "authors": "Autores",
+      "publishedDate": "Publicado em",
+      "publisher": "Editora",
+      "actions": "Ações",
+      "remove": "Remover",
+      "isbn": "ISBN",
+      "pageCount": "Número de páginas",
+      "preview": "Visualizar no Google Books",
+      "addToShelf": "Adicionar à Estante",
+      "removeFromShelf": "Remover da Estante",
+      "updateStatus": "Atualizar Status de Leitura",
+      "synopsis": "Sinopse",
+      "noSynopsis": "Nenhuma sinopse disponível.",
+      "notFound": "Livro não encontrado na estante",
+      "back": "Voltar para a Estante",
+      "language": "Idioma",
+      "categories": "Categorias"
+    }
+  },
+
+  "discover": {
+    "title": "Descubra livros, organize sua leitura",
+    "subtitle": "Explore o acervo do Google Books, salve seus favoritos e mantenha sua estante virtual sempre à mão.",
+    "filter": {
+      "searchPlaceholder": "Pesquise por título, autor ou ISBN",
+      "type": {
+        "all": "Todos",
+        "books": "Livros",
+        "magazines": "Revistas"
+      },
+      "order": {
+        "relevance": "Relevância",
+        "newest": "Mais recentes"
+      }
+    },
+    "results": {
+      "noResults": "Nenhum livro encontrado. Tente ajustar sua pesquisa.",
+      "pages": {
+        "page": "Página {{current}} de {{totalPages}}",
+        "prev": "Anterior",
+        "next": "Próximo"
+      }
+    }
+  }
+}
