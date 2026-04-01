@@ -18,6 +18,10 @@ import {
 import { AppLayout } from '@/components/custom';
 
 function RootLayout() {
+  const isAuthenticated = useAuthStore.getState().isAuthenticated;
+  if (!isAuthenticated) {
+    return <Outlet />;
+  }
   return <AppLayout />;
 }
 

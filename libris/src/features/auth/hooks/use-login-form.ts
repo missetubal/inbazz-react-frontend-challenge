@@ -5,6 +5,7 @@ import { createLoginSchema, type LoginSchema } from '../schemas/login-schema';
 import { useForm } from 'react-hook-form';
 import { useState, type Dispatch, type SetStateAction } from 'react';
 import { useTranslation } from 'react-i18next';
+import { toast } from 'sonner';
 
 interface UseLoginResult {
   form: ReturnType<typeof useForm<LoginSchema>>;
@@ -33,10 +34,11 @@ export function useLogin(): UseLoginResult {
     try {
       await login(formValues);
       if (useAuthStore.getState().isAuthenticated) {
-        navigate({ to: '/' });
+        navigate({ to: '/shelf' });
       }
     } catch (err) {
       console.error('Login failed', err);
+      toast.error(t('loginPage.loginForm.toast.errorToast'));
     }
   };
 

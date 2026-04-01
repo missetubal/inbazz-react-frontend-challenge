@@ -1,3 +1,67 @@
 {
-    
+  "navbar": {
+    "name": "Libris",
+    "login": "Login",
+    "start": "Get Started"
+  },
+  "hero": {
+    "badge": "Powered by Google Books API",
+    "title": ["Your personal", "library", ", online"],
+    "subtitle": "Discover books from the Google catalog, organize your reading with custom statuses, and keep your bookshelf always at hand.",
+    "buttons": {
+      "createMyBookshelf": "Create my bookshelf",
+      "alreadyHaveAccount": "Already have an account"
+    }
+  },
+  "features": {
+    "title": "Everything you need",
+    "subtitle": "A complete reading management experience, right in your browser.",
+    "items": {
+      "search": {
+        "title": "Discover Millions of Books",
+        "description": "Powerful search with debounce connected to the Google Books API. Filter by type and order."
+      },
+      "library": {
+        "title": "Your Virtual Bookshelf",
+        "description": "Save books with custom statuses: Want to Read, Reading, or Finished. Data persisted locally."
+      },
+      "bookMarked": {
+        "title": "Complete Details",
+        "description": "Synopsis, publisher, ISBN, categories, and direct link to preview on Google Books."
+      },
+      "sparkles": {
+        "title": "Modern Experience",
+        "description": "Dark/light theme, PT/EN internationalization, smooth animations, and responsive design."
+      }
+    }
+  },
+  "shelfPreview": {
+    "title": "Your organized bookshelf",
+    "subtitle": "View all your books in an elegant table, change statuses, and remove with a click.",
+    "table": {
+      "cover": "Cover",
+      "title": "Title",
+      "author": "Author",
+      "published": "Publication",
+      "status": "Status"
+    }
+  },
+  "cta": {
+    "title": "Start reading with more organization",
+    "subtitle": "Create your virtual bookshelf right now. No complicated registration, no server data — everything stays in your browser.",
+    "joinNow": "Join now"
+  },
+  "stats": {
+    "items": {
+      "availableBooks": "Available books",
+      "free": "Free",
+      "status": "Reading status",
+      "language": "Languages"
+    }
+  },
+  "footer": {
+    "name": "Libris",
+    "data": "Data provided by ",
+    "api": "Google Books API"
+  }
 }

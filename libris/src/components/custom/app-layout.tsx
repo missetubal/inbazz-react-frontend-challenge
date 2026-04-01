@@ -1,4 +1,9 @@
-import { Link, Outlet, useRouterState } from '@tanstack/react-router';
+import {
+  Link,
+  Outlet,
+  useNavigate,
+  useRouterState,
+} from '@tanstack/react-router';
 import { BookOpen, LogOut, Menu, X } from 'lucide-react';
 import { Button } from '../ui';
 import { getNavItems } from '@/shared';
@@ -11,6 +16,8 @@ import { useTranslation } from 'react-i18next';
 
 export const AppLayout = () => {
   const routerState = useRouterState();
+  const navigate = useNavigate();
+
   const navItems = getNavItems();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -23,6 +30,11 @@ export const AppLayout = () => {
       setMobileOpen(false);
     }
   }, [routerState.location.pathname]);
+
+  const handleLogout = () => {
+    logout();
+    navigate({ to: '/' });
+  };
 
   return (
     <div className='min-h-screen bg-background'>
@@ -109,7 +121,7 @@ export const AppLayout = () => {
                   <Button
                     variant='ghost'
                     size='sm'
-                    onClick={logout}
+                    onClick={handleLogout}
                     className='gap-2 justify-start text-destructive'
                   >
                     <LogOut className='w-4 h-4' />

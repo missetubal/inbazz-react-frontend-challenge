@@ -1,69 +1,86 @@
 {
   "shelf": {
-    "title": "Minha Estante",
-    "subtitle": "Acompanhe seus livros e organize sua leitura",
+    "title": "My Shelf",
+    "subtitle": "Track your books and organize your reading",
     "emptyState": {
-      "title": "Sua estante está vazia",
-      "description": "Descubra livros e adicione à sua coleção.",
-      "goDiscover": "Descobrir Livros"
+      "title": "Your shelf is empty",
+      "description": "Discover books and add them to your collection.",
+      "goDiscover": "Discover Books"
     },
     "table": {
-      "cover": "Capa",
-      "title": "Título",
-      "authors": "Autores",
-      "publishedDate": "Publicado em",
-      "actions": "Ações",
-      "remove": "Remover",
-      "status": "Status"
+      "cover": "Cover",
+      "title": "Title",
+      "authors": "Authors",
+      "publishedDate": "Published on",
+      "actions": "Actions",
+      "remove": "Remove",
+      "status": {
+        "label": "Status",
+        "wantToRead": "Want to read",
+        "reading": "Reading",
+        "finished": "Finished",
+        "unknown": "Unknown"
+      },
+      "filters": {
+        "byTitle": "By title",
+        "byStatus": "By status"
+      }
     },
     "toast": {
-      "added": "Livro adicionado à estante",
-      "removed": "Livro removido da estante",
-      "statusUpdated": "Status de leitura atualizado"
+      "added": "Book added to shelf",
+      "removed": "Book removed from shelf",
+      "statusUpdated": "Reading status updated"
+    },
+    "removeConfirmModal": {
+      "title": "Confirm Removal",
+      "description": "Are you sure you want to remove \"{{bookTitle}}\" from your shelf? This action cannot be undone.",
+      "cancel": "Cancel",
+      "confirm": "Remove"
     },
     "bookDetails": {
-      "cover": "Capa",
-      "title": "Título",
-      "authors": "Autores",
-      "publishedDate": "Publicado em",
-      "actions": "Ações",
-      "remove": "Remover",
+      "cover": "Cover",
+      "title": "Title",
+      "authors": "Authors",
+      "publishedDate": "Published on",
+      "publisher": "Publisher",
+      "actions": "Actions",
+      "remove": "Remove",
       "isbn": "ISBN",
-      "pageCount": "Número de páginas",
-      "preview": "Visualizar no Google Books",
-      "addToShelf": "Adicionar à Estante",
-      "removeFromShelf": "Remover da Estante",
-      "updateStatus": "Atualizar Status de Leitura",
-      "synopsis": "Sinopse",
-      "noSynopsis": "Nenhuma sinopse disponível.",
-      "notFound": "Livro não encontrado na estante",
-      "back": "Voltar para a Estante",
-      "language": "Idioma",
-      "categories": "Categorias"
+      "pageCount": "Page count",
+      "preview": "View on Google Books",
+      "addToShelf": "Add to Shelf",
+      "removeFromShelf": "Remove from Shelf",
+      "updateStatus": "Update Reading Status",
+      "synopsis": "Synopsis",
+      "noSynopsis": "No synopsis available.",
+      "notFound": "Book not found on shelf",
+      "back": "Back to Shelf",
+      "language": "Language",
+      "categories": "Categories"
     }
   },
 
   "discover": {
-    "title": "Descubra livros, organize sua leitura",
-    "subtitle": "Explore o acervo do Google Books, salve seus favoritos e mantenha sua estante virtual sempre à mão.",
+    "title": "Discover books, organize your reading",
+    "subtitle": "Explore the Google Books catalog, save your favorites and keep your virtual shelf always at hand.",
     "filter": {
-      "searchPlaceholder": "Pesquise por título, autor ou ISBN",
+      "searchPlaceholder": "Search by title, author or ISBN",
       "type": {
-        "all": "Todos",
-        "books": "Livros",
-        "magazines": "Revistas"
+        "all": "All",
+        "books": "Books",
+        "magazines": "Magazines"
       },
       "order": {
-        "relevance": "Relevância",
-        "newest": "Mais recentes"
+        "relevance": "Relevance",
+        "newest": "Newest"
       }
     },
     "results": {
-      "noResults": "Nenhum livro encontrado. Tente ajustar sua pesquisa.",
+      "noResults": "No books found. Try adjusting your search.",
       "pages": {
-        "page": "Página {{current}} de {{totalPages}}",
-        "prev": "Anterior",
-        "next": "Próximo"
+        "page": "Page {{current}} of {{totalPages}}",
+        "prev": "Previous",
+        "next": "Next"
       }
     }
   }
