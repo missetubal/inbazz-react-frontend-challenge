@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# Libris - Sua Estante de Livros Pessoal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O **libris** é uma aplicação web moderna e responsiva para gerenciar sua paixão por livros. Explore um vasto catálogo de títulos da Google Books API, adicione seus favoritos à sua estante pessoal, acompanhe seu progresso de leitura e personalize sua experiência com temas e idiomas.
 
-Currently, two official plugins are available:
+## 📚 Funcionalidades Principais
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+*   **Exploração de Livros**: Pesquise e descubra milhões de livros através da Google Books API.
+*   **Estante Pessoal**: Adicione livros à sua estante, organize-os e acompanhe seu status de leitura (Quero Ler, Lendo, Lido).
+*   **Detalhes do Livro**: Visualize informações detalhadas sobre cada livro, incluindo capa, autores, descrição e data de publicação.
+*   **Autenticação Simulada**: Faça login ou registre-se para ter sua própria estante persistente.
+*   **Internacionalização (i18n)**: Alterne entre Português e Inglês para uma experiência localizada.
+*   **Tema Claro/Escuro**: Personalize a interface com seu tema preferido.
+*   **Experiência Fluida**: Animações suaves, estados de carregamento (skeletons) e feedback visual para uma navegação agradável.
 
-## React Compiler
+## 🚀 Tecnologias Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Este projeto foi construído com uma stack moderna e robusta:
 
-## Expanding the ESLint configuration
+*   **Framework**: [React](https://react.dev/) (com [Vite](https://vitejs.dev/) para build)
+*   **Linguagem**: [TypeScript](https://www.typescriptlang.org/)
+*   **Estilização**: [Tailwind CSS](https://tailwindcss.com/)
+*   **Componentes UI**: [Shadcn/ui](https://ui.shadcn.com/)
+*   **Roteamento**: [TanStack Router](https://tanstack.com/router)
+*   **Gerenciamento de Estado**: [Zustand](https://zustand-demo.pmnd.rs/)
+*   **Gerenciamento de Dados Assíncronos**: [TanStack Query](https://tanstack.com/query)
+*   **Validação de Formulários**: [React Hook Form](https://react-hook-form.com/) com [Zod](https://zod.dev/)
+*   **Animações**: [Framer Motion](https://www.framer.com/motion/)
+*   **Internacionalização**: [react-i18next](https://react.i18next.com/)
+*   **Testes**: [Jest](https://jestjs.io/) e [React Testing Library](https://testing-library.com/react/)
+*   **Ícones**: [Lucide React](https://lucide.dev/)
+*   **Toasts**: [Sonner](https://sonner.emilkowal.ski/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ⚙️ Como Rodar o Projeto
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Para instruções detalhadas sobre como configurar o ambiente, instalar dependências, adicionar a chave da Google Books API e executar a aplicação e os testes, por favor, consulte o arquivo [`INSTRUCTIONS.md`](./INSTRUCTIONS.md).
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🔑 Credenciais de Teste
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Para testar a funcionalidade de autenticação, você pode usar as seguintes credenciais:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+*   **Email:** `test@example.com`
+*   **Senha:** `password123`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Você também pode registrar um novo usuário.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📐 Arquitetura do Projeto
+
+Para uma visão aprofundada da arquitetura do projeto, estrutura de pastas, decisões de design e como os desafios da Google Books API foram abordados, consulte o arquivo [`ARCHITECTURE.md`](./ARCHITECTURE.md).
+
+---

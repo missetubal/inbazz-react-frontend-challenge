@@ -12,6 +12,10 @@ export const useGetShelfData = () => {
 
   const { t } = useTranslation('shelfAndDiscover');
 
+  const [isRemoveConfirmModalOpen, setIsRemoveConfirmModalOpen] =
+    useState(false);
+  const [bookToRemoveId, setBookToRemoveId] = useState<string | null>(null);
+
   const sortedBooks = useMemo(() => {
     const arrBooks = [...books];
 
@@ -30,7 +34,7 @@ export const useGetShelfData = () => {
         );
         break;
       case 'status':
-        arrBooks.sort((a, b) => a.status.localeCompare(b.status));
+        arrBooks.sort((a, b) => a.status.localeCompare(b.status)).reverse();
         break;
 
       default:
@@ -46,13 +50,26 @@ export const useGetShelfData = () => {
   }, [books, sortBy, sortDirection]);
 
   const handleRemoveBook = (bookId: string) => {
-    removeBook(bookId);
-    toast.success(t('shelf.toast.removed'));
+    setIsRemoveConfirmModalOpen(true);
+    setBookToRemoveId(bookId);
   };
 
   const handleUpdateStatus = (bookId: string, newStatus: Book['status']) => {
     updateStatus(bookId, newStatus);
     toast.success(t('shelf.toast.statusUpdated'));
+  };
+
+  const closeRemoveConfirmModal = () => {
+    setIsRemoveConfirmModalOpen(false);
+    setBookToRemoveId(null);
+  };
+
+  const handleConfirmRemoveBook = () => {
+    if (bookToRemoveId) {
+      removeBook(bookToRemoveId);
+      closeRemoveConfirmModal();
+      toast.success(t('shelf.toast.removed'));
+    }
   };
 
   return {
@@ -64,5 +81,9 @@ export const useGetShelfData = () => {
     sortDirection,
     setSortDirection,
     handleUpdateStatus,
+    handleConfirmRemoveBook,
+    closeRemoveConfirmModal,
+    isRemoveConfirmModalOpen,
+    bookToRemoveId,
   };
 };

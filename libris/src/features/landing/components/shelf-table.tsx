@@ -58,7 +58,6 @@ export const ShelfTable = () => {
           <div className='w-3 h-3 rounded-full bg-destructive/40' />
           <div className='w-3 h-3 rounded-full bg-amber-400/40' />
           <div className='w-3 h-3 rounded-full bg-emerald-400/40' />
-          {/* <div className='ml-3 flex-1 h-5 rounded-md bg-secondary/60 max-w-xs' /> */}
         </div>
         <Table>
           <TableHeader className='sticky top-0'>

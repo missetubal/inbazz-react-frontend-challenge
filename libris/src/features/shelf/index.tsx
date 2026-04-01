@@ -5,7 +5,7 @@ export const ShelfWrapper = () => {
   const { sortedBooks, t } = useGetShelfData();
 
   return (
-    <div>
+    <div className='space-y-8'>
       <h1 className='text-3xl sm:text-4xl font-serif font-bold tracking-tight'>
         {t('shelf.title')}
       </h1>

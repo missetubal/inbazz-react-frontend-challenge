@@ -31,9 +31,7 @@ export const LoginWrapper = () => {
             <LoginForm />
           </CardContent>
         </Card>
-        <p className='text-center text-xs text-muted-foreground mt-6'>
-          Virtual Bookshelf — Powered by Google Books API
-        </p>
+        
       </motion.div>
     </div>
   );
